@@ -1,0 +1,34 @@
+@media (max-width: 1280px) {
+  .navbar {
+    
+  }
+  .navbar-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+}
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: none;
+    color: red;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-item {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+  .close-menu {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+  }
+}

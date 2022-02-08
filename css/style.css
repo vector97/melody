@@ -1,0 +1,357 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/BebasNeueRegular.woff2") format("woff2"),
+    url("../fonts/BebasNeueRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.header {
+  background-color: #635854;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 4px solid #3596f5;
+}
+.navbar {
+  max-width: 1280px;
+  margin: auto;
+  display: flex; /* сделали блок гибким */
+  justify-content: space-between; /* расставили элементы по краям */
+  align-items: center;
+}
+.navbar-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  text-align: center;
+}
+.navbar-item {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.navbar-link {
+  text-decoration: none;
+  color: #fff;
+}
+.navbar-contacts {
+  text-align: right;
+  font-size: 14px;
+}
+.navbar-text {
+  display: block;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.navbar-phone {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+.menu-button {
+  /* position: absolute; */
+  border: none;
+  cursor: pointer;
+  display: none;
+  color: #635854;
+}
+.close-menu {
+  display: none;
+}
+.main {
+  display: flex;
+  max-width: 1280px;
+  margin: auto;
+  padding-top: 54px;
+  padding-bottom: 95px;
+}
+.main-info {
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-image path {
+  opacity: 0;
+}
+.home-image path:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+path.current-floor {
+  opacity: 1;
+}
+.counter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.counter-button {
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+  bottom: none;
+}
+.counter-arrow-down {
+  transform: rotateX(180deg);
+  margin-top: 10px;
+}
+.main-title {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: normal;
+  font-size: 37px;
+  line-height: 37px;
+  color: #635854;
+}
+.floor-counter {
+  font-family: "Bebas Neue", sans-serif;
+  color: #635854;
+  font-size: 124px;
+  margin-top: 10px;
+}
+.button-primary {
+  background: #3596f5;
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+  padding: 16px 36px;
+  cursor: pointer;
+}
+.footer {
+  background-color: #d7d7d7;
+  color: #635854;
+  padding-top: 53px;
+  padding-bottom: 53px;
+  border-top: 4px solid #3596f5;
+}
+.footer-div {
+  width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.footer-right {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  text-align: center;
+}
+.footer-contacts {
+  text-align: left;
+  font-size: 14px;
+  margin-left: 37px;
+}
+.footer-text {
+  display: block;
+  color: #635854;
+  margin-bottom: 4px;
+}
+.footer-phone {
+  text-decoration: none;
+  color: #635854;
+  font-weight: 700;
+  font-size: 17px;
+}
+.footer-icons {
+  margin-left: 60px;
+}
+.footer-icons a {
+  margin-right: 15px;
+  text-decoration: none;
+}
+.footer-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  text-align: center;
+  color: #635854;
+}
+.footer-item {
+  margin-left: 20px;
+}
+.footer-link {
+  text-decoration: underline;
+  color: #635854;
+}
+.modal,
+.modal-feedback {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.2s;
+}
+.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+.modal-dialog {
+  position: relative;
+  max-width: 1000px;
+  min-height: 565px;
+  background-color: #fff;
+  flex-grow: 1;
+  display: flex;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: transform 0.2s, opacity 0.2s;
+  transition-delay: 0.2s;
+}
+.is-open > .modal-dialog {
+  opacity: 1;
+  transform: translateY(0);
+}
+.modal-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+.modal-image {
+  background-color: #ebebeb;
+  width: 60%;
+  text-align: center;
+  padding: 50px;
+}
+.flats path {
+  opacity: 0;
+}
+.flats path:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.modal-info {
+  width: 40%;
+  padding: 50px 46px;
+}
+.flat-list {
+  padding: 0;
+  list-style: none;
+  margin-top: 55px;
+}
+.flat-item {
+  margin-bottom: 10px;
+}
+.flat-link {
+  font-size: 16px;
+  line-height: 19px;
+  color: #635854;
+  text-decoration: none;
+}
+.flat-link:hover {
+  color: #3596f5;
+  text-decoration: underline;
+}
+.modal-alert {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #635854;
+  margin-top: 56px;
+}
+.modal-close-button {
+  position: absolute;
+  right: 27px;
+  top: 38px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+}
+.flats .flat-path-mouseover {
+  opacity: 1;
+}
+.flat-link-mouseover {
+  color: #3596f5;
+  text-decoration: underline;
+}
+
+.modal-form {
+  position: relative;
+  max-width: 500px;
+  min-height: 365px;
+  background-color: #fff;
+  flex-grow: 1;
+  display: flex;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: transform 0.2s, opacity 0.2s;
+  transition-delay: 0.2s;
+}
+.is-open > .modal-dialog,
+.is-open > .modal-form {
+  opacity: 1;
+  transform: translateY(0);
+}
+.modal-feed-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 50px;
+}
+.modal-form-title {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+.modal-feed-form button {
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+.modal-feed-form input {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+.modal-alert {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 56px;
+  color: #635854;
+  display: none;
+}
+.modal-close-button,
+.modal-feedback-close-button {
+  position: absolute;
+  right: 27px;
+  top: 38px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+}
